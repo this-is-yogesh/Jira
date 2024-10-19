@@ -9,6 +9,8 @@
 # testing
 /coverage
 
+/README2.md
+
 # next.js
 /.next/
 /out/

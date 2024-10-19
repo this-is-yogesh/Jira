@@ -2,11 +2,11 @@
 
 import * as React from "react"
 import * as RechartsPrimitive from "recharts"
-import {
+/* import {
   NameType,
   Payload,
   ValueType,
-} from "recharts/types/component/DefaultTooltipContent"
+} from "recharts/types/component/DefaultTooltipContent" */
 
 import { cn } from "@/lib/utils"
 
@@ -74,8 +74,9 @@ ChartContainer.displayName = "Chart"
 
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(
+    //eslint-disable-next-line @typescript-eslint/no-unused-vars
     ([_, config]) => config.theme || config.color
-  )
+  );
 
   if (!colorConfig.length) {
     return null
@@ -184,7 +185,7 @@ const ChartTooltipContent = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl",
+           " grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl",
           className
         )}
       >

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="flex gap-4">
       <Input />
-      <Button size="sm"> Primary</Button>
+      <Button size="sm"> Primarym12</Button>
       <Button variant="destructive" size="sm">
         {" "}
         Destructive
