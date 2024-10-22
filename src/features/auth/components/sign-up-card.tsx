@@ -23,19 +23,16 @@ import {
   FormDescription,
 } from "@/components/ui/form";
 import { Value } from "@radix-ui/react-select";
+import { registerSchema } from "@/features/schemas";
+import { useRegister } from "../api/use-register";
 
-const formSchema = z.object({
-  name: z.string().trim().min(1, "Name Field Required"),
-  email: z.string().email(),
-  password: z.string(),
-});
-
-const onSubmit = (v: z.infer<typeof formSchema>) => {
-  console.log({ v }, "value-signup");
-};
 export const SignUpCard = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const { mutate } = useRegister();
+  const onSubmit = (v: z.infer<typeof registerSchema>) => {
+    mutate({ json: v });
+  };
+  const form = useForm<z.infer<typeof registerSchema>>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
       email: "",

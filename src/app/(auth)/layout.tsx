@@ -9,6 +9,8 @@ interface AuthProp {
   children: React.ReactNode;
 }
 
+
+/* layout section remains constant throughout all the pages, like layout will be same for all the (auth) in this case */
 const Layout = ({ children }: AuthProp) => {
   let pathname = usePathname();
   let isSignUp = pathname === "/sign-up"; 
